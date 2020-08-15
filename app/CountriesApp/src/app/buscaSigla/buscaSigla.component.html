@@ -1,0 +1,43 @@
+<h1>Busca por sigla</h1>
+<input type="text" [(ngModel)]="textoBusca">
+<button class="btn btn-warning" (click)="buscarPorSigla()" >Buscar</button>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Bandeira</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Sigla 1</th>
+      <th scope="col">Sigla 2</th>
+      <th scope="col">Moeda</th>
+      <th scope="col">Bloco Regional</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let country of countries" style="cursor: pointer" (click)="openModal(country.name)">
+      <td><img src={{country.flag}} width="20%"></td>
+      <td>{{country.name}}</td>
+      <td>{{country.alpha2Code}}</td>
+      <td>{{country.alpha3Code}}</td>
+
+      <td>
+        <table class="table table-borderless">
+        <tr *ngFor="let currency of country.currencies">
+          <td>{{currency.name}}</td>
+        </tr>
+        </table>
+      </td>
+
+      <td>
+        <table class="table table-borderless">
+          <tr *ngFor="let regionalbloc of country.regionalBlocs">
+            <td>{{regionalbloc.name}}</td>
+          </tr>
+        </table>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+
+

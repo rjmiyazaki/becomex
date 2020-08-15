@@ -1,0 +1,35 @@
+
+<h1>{{country.name}}</h1>
+
+<div class="modal-body">
+  <p>População: {{country.population}}</p>
+  <p>Timezone: {{country.timezones}}</p>
+  <p>Capital: {{country.capital}}</p>
+  <p>Fronteiras: {{country.borders}}</p>
+
+  <h5>Moedas</h5>
+  <table class="table table-borderless">
+    <tr *ngFor="let currency of country.currencies">
+      <td>{{currency.name}}</td>
+    </tr>
+  </table>
+
+  <h5>Blocos Regionais</h5>
+  <table class="table table-borderless">
+    <tr *ngFor="let regionalbloc of country.regionalBlocs">
+      <td>{{regionalbloc.name}}</td>
+    </tr>
+  </table>
+
+  <h5>Idiomas</h5>
+  <table class="table table-borderless">
+    <tr *ngFor="let language of country.languages">
+      <td>{{language.name}}</td>
+    </tr>
+  </table>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn pull-right" aria-label="Close" (click)="close()">
+    Fechar
+  </button>
+</div>

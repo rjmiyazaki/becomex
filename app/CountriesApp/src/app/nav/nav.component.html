@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">CountriesApp</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a routerLink="pais" class="nav-link" routerLinkActive="active">Listar países</a>
+      </li>
+
+      <li class="btn-group" dropdown>
+        <a id="button-basic" dropdownToggle type="button" class="nav-link dropdown-toggle"
+                aria-controls="dropdown-basic">Buscar
+        </a>
+        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+            role="menu" aria-labelledby="button-basic">
+          <a routerLink="buscanome" class="dropdown-item">Por nome</a>
+          <a routerLink="buscasigla" class="dropdown-item" >Por sigla</a>
+          <a routerLink="buscamoeda" class="dropdown-item" >Por moeda</a>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
